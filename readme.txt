@@ -6,4 +6,4 @@ more add and commit can Know it
 please a update
 update agine
 this is a new branch dev
-creating a new branch is vary quick & smiple
+creating a new branch is vary quick & simple
