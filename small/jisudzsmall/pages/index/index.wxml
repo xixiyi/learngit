@@ -1,0 +1,100 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view>
+    <button class="{{shouquanbutton}}" bindgetuserinfo="bindGetUserInfo" open-type='getUserInfo'>授权后将会出现头像</button>
+  </view>
+  <view class="usermotto">
+    <!-- <text class="user-motto">{{motto}}</text> -->
+    <dl class="menu">
+      <ul>
+        <li style="border-top:1px solid #dbdbdb">
+          <image src='../../image/p_inven.png' style="background:rgb(139,195,74)"></image>
+          <dt data-index="0" bindtap="tapMainMenu1" capture-bind:tap="inven">库存详情</dt>
+        </li>
+        <dd class="{{subMenuDisplay[0]}}">
+          <ul>
+            <li>100以上</li>
+            <li>200以下</li>
+          </ul>
+        </dd>
+        <li>
+          <image src='../../image/p_ribao.png' style="background:rgb(63,81,181)"></image>
+          <dt data-index="1" bindtap="tapMainMenu">生产日报</dt>
+        </li>
+        <dd class="{{subMenuDisplay[1]}}">
+          <ul>
+            <li class="{{subMenuHighLight[1][0]}}" data-index="1-0" bindtap="tapSubMenu" capture-bind:tap="insertdayreport">上传日报</li>
+            <li class="{{subMenuHighLight[1][1]}}" data-index="1-1" bindtap="tapSubMenu" capture-bind:tap="selectdayreport">查看日报</li>
+          </ul>
+        </dd>
+        <li>
+          <image src='../../image/p_jindu.png' style="background:rgb(255,64,129)"></image>
+          <dt data-index="2" bindtap="tapMainMenu">生产进度</dt>
+        </li>
+        <dd class="{{subMenuDisplay[2]}}">
+          <ul>
+            <li class="{{subMenuHighLight[2][0]}}" data-index="2-0" bindtap="tapSubMenu" capture-bind:tap="selectallorder">所有订单</li>
+            <li class="{{subMenuHighLight[2][1]}}" data-index="2-1" bindtap="tapSubMenu" capture-bind:tap="selectneworder">新订单</li>
+            <li class="{{subMenuHighLight[2][2]}}" data-index="2-2" bindtap="tapSubMenu" capture-bind:tap="selectreceivedorder">已接单</li>
+            <li class="{{subMenuHighLight[2][3]}}" data-index="2-3" bindtap="tapSubMenu" capture-bind:tap="selectcompleteorder">完成订单</li>
+            <li class="{{subMenuHighLight[2][4]}}" data-index="2-4" bindtap="tapSubMenu" capture-bind:tap="selectcancleorder">作废订单</li>
+          </ul>
+        </dd>
+        <li>
+          <image src='../../image/p_yeji.png' style="background:rgb(37,155,36)"></image>
+          <dt data-index="3" bindtap="tapMainMenu">生产业绩</dt>
+        </li>
+        <dd class="{{subMenuDisplay[3]}}">
+          <ul>
+            <li class="{{subMenuHighLight[3][0]}}" data-index="3-0" bindtap="tapSubMenu" capture-bind:tap="insertshengchanyeji">添加生产业绩</li>
+            <li class="{{subMenuHighLight[3][1]}}" data-index="3-1" bindtap="tapSubMenu" capture-bind:tap="selectshengchanyeji">查看生产业绩</li>
+          </ul>
+        </dd>
+        <li>
+          <image src='../../image/p_baobiao.png' style="background:rgb(0,150,136)"></image>
+          <dt data-index="4" bindtap="tapMainMenu">业务报表</dt>
+        </li>
+        <dd class="{{subMenuDisplay[4]}}">
+          <ul>
+            <li class="{{subMenuHighLight[4][0]}}" data-index="4-0" bindtap="tapSubMenu" capture-bind:tap="dayreport">上传日报表</li>
+            <li class="{{subMenuHighLight[4][1]}}" data-index="4-1" bindtap="tapSubMenu" capture-bind:tap="weekreport">上传周报表</li>
+            <li class="{{subMenuHighLight[4][2]}}" data-index="4-2" bindtap="tapSubMenu" capture-bind:tap="monthreport">上传月报表</li>
+            <li class="{{subMenuHighLight[4][3]}}" data-index="4-3" bindtap="tapSubMenu" capture-bind:tap="selectreport">报表查询</li>
+          </ul>
+        </dd>
+
+        <li>
+          <image src='../../image/p_material.png' style="background:rgb(215,34,100)"></image>
+          <dt data-index="5" bindtap="tapMainMenu">材料管理</dt>
+        </li>
+        <dd class="{{subMenuDisplay[5]}}">
+          <ul>
+            <li class="{{subMenuHighLight[5][0]}}" data-index="5-0" bindtap="tapSubMenu" capture-bind:tap="materialdetail">材料详情</li>
+            <li class="{{subMenuHighLight[5][1]}}" data-index="5-1" bindtap="tapSubMenu" capture-bind:tap="getmaterial">领料单</li>
+            <li class="{{subMenuHighLight[5][2]}}" data-index="5-2" bindtap="tapSubMenu" capture-bind:tap="getmaterialselect">领料单管理</li>
+          </ul>
+        </dd>
+
+        <li>
+          <image src='../../image/yeji.png' style="background:orange"></image>
+          <dt data-index="6" bindtap="tapMainMenu">产量统计</dt>
+        </li>
+        <dd class="{{subMenuDisplay[6]}}">
+          <ul>
+            <li wx:for="{{huanjieList}}" class="{{subMenuHighLight[6][index]}}" data-index="6-{{index}}" bindtap="tapSubMenu" data-huanjiename="{{item.shengchanhuanjiename}}" capture-bind:tap="huanjietongji">{{item.shengchanhuanjiename}}</li>
+          </ul>
+        </dd>
+
+
+
+
+
+
+      </ul>
+    </dl>
+  </view>
+</view>

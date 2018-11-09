@@ -1,0 +1,150 @@
+<view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>领料单管理</dt>
+  </view>
+  <view>
+    <button bindtap="seniorscrebutton">{{seniorscrebutton}}</button>
+  </view>
+</view>
+<view class='middleview'>
+  <ul>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>型号</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入型号' value='{{xinghao}}' bindinput="xinghao"></input>
+        </view>
+      </view>
+    </li>
+    <li class="screchinner">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>原材料</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{materialname}}" placeholder='请输入原材料' bindinput="materialname"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}} hidden">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>类型</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{materialtype}}" placeholder='类型' bindinput="materialtype"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}} hidden">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>代码</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{materialdaima}}" placeholder='请输入代码' bindinput="materialdaima"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}} hidden">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>规格</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{guige}}" placeholder='请输入规格' bindinput="guige"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>单位</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{danweiname}}" placeholder='请输入单位' bindinput="danweiname"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>开始时间</label>
+        </view>
+        <view class="screchinner_right">
+          <picker mode="date" value="{{begintime}}" start="1970-01-01" end="2099-01-01" bindchange="bindbeginDateChange">
+            <view class="picker">
+              <input value="{{begintime}}" placeholder='请输入开始时间' disabled></input>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>结束时间</label>
+        </view>
+        <view class="screchinner_right">
+          <picker mode="date" value="{{endtime}}" start="1970-01-01" end="2099-01-01" bindchange="bindendDateChange">
+            <view class="picker">
+              <input value="{{endtime}}" placeholder='请输入结束时间' disabled></input>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </li>
+  </ul>
+</view>
+
+<view class='middleview {{updateview}}'>
+  <ul>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>数量</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入数量' value="{{updatenum}}" bindinput="updatenum"></input>
+        </view>
+      </view>
+    </li>
+  </ul>
+ <view class="tr">
+      <view class="td">
+        <button bindtap='cancle'>取消</button>
+      </view>
+      <view class="td">
+        <button bindtap='submit'>提交</button>
+      </view>
+</view>
+</view>
+
+<view wx:for="{{materialorderInfo}}">
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view class=''>序号：{{index+1}}</view>
+      <view class=''>日期：{{item.time}}</view>
+      <view class=''>型号：{{item.material.xinghao}}</view>
+      <view class=''>数量：{{item.squarenum}}</view>
+      <view class=''>原材料：{{item.material.materialname}}</view>
+      <view class=''>库存地：{{item.material.kcdizhi}}</view>
+      <view class=''>往来单位：{{item.material.danweiname}}</view>
+      <view class=''>使用说明：{{item.shuoming}}</view>
+      <view class=''>备注：{{item.materialorderbeizhu}}</view>
+      <view class=''>部门：{{item.bumen}}</view>
+      <view class=''>领料人：{{item.getmanname}}</view>
+      <block wx:if="{{item.status==1}}">
+      <view class='btninproduce'>
+        <button class="btinproduce" data-id="{{item.id}}" data-materialid="{{item.materialid}}" bindtap='updateproduce'>修改</button>
+      </view>
+      <view class='btninproduce'>
+        <button class="btinproduce" data-id="{{item.id}}" bindtap="deletematerialorder">删除</button>
+      </view>
+      </block>
+    </view>
+  </view>
+</view>

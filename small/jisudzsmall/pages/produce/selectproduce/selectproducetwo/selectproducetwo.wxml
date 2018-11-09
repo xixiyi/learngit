@@ -1,0 +1,41 @@
+<view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>{{baobiaoInfo.huanjie}}{{baobiaotitle}}</dt>
+  </view>
+</view>
+<view class='invenout'>
+  <view class='inveninner' style='border:1px solid red'>
+    <view class=''>日期：{{baobiaoInfo.time}}</view>
+    <view class=''>班次：{{baobiaoInfo.banci}}</view>
+    <view class=''>订单：{{baobiaoInfo.kehuphone}}</view>
+    <view class=''>型号：{{baobiaoInfo.xinghao}}</view>
+    <view style='font-size:26px;color:red;float:right;margin-top:-26px' class=''>{{baobiaoInfo.isjiaban=='是'?'加班':''}}</view>
+  </view>
+</view>
+<view class='invenout'>
+  <view class='inveninner' style='border:1px solid green'>
+    <view class=''>类型：{{baobiaoInfo.type}}</view>
+    <view class=''>环节：{{baobiaoInfo.huanjie}}</view>
+    <view class=''>生产日期：{{baobiaoInfo.pici}}</view>
+    <view class=''>规格：{{baobiaoInfo.guige}}</view>
+    <view class=''>成品数量：{{baobiaoInfo.chengpinnum}}</view>
+    <view class=''>次品数量：{{baobiaoInfo.cipinnum}}</view>
+    <view class=''>领用数量：{{baobiaoInfo.getmaterialnum}}</view>
+    <view class=''>其他工序：{{baobiaoInfo.beizhu}}</view>
+    <view class=''>相关工序：{{baobiaoInfo.xingguangongxu}}</view>
+    <view class=''>次品原因：{{baobiaoInfo.cipinyuanyin}}</view>
+  </view>
+</view>
+<view class='invenout'>
+  <view class='inveninner' style='border-top:1px solid red;border-left:1px solid red;border-right:1px solid red'>
+    <view class=''>姓名：{{baobiaoInfo.name+baobiaoInfo.pingfenname}}</view>
+    <view class=''>备注：{{baobiaoInfo.beizhuinfo}}</view>
+    <view class=''>产量业绩：{{baobiaoInfo.chanliangyejiheji}}</view>
+    <view class=''>工序业绩：{{baobiaoInfo.qitagongxuyejiheji}}</view>
+    <view class=''>次品业绩：{{baobiaoInfo.cipinyejiheji}}</view>
+    <view class=''>补贴金额：{{baobiaoInfo.butiejine}}</view>
+    <view class=''>配方：{{baobiaoInfo.peifang}}</view>
+    <view class=''>当班记录人：{{baobiaoInfo.username}}</view>
+  </view>
+</view>

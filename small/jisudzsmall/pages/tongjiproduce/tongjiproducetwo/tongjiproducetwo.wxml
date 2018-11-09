@@ -1,0 +1,30 @@
+<view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>{{huanjie}}产量统计详情</dt>
+  </view>
+</view>
+<view class='invenout'>
+  <view wx:for="{{produceInfo}}" class='inveninner' style='border-bottom:1px solid red'>
+    <view>
+      <view class='invenout'>
+        <view class='inveninner'>
+          <view class=''>订单：{{item.kehuphone}}</view>
+          <view class=''>型号：{{item.xinghao}}</view>
+          <view class=''>类型：{{item.type}}</view>
+          <view class=''>类型：{{item.yawen}}</view>
+          <view class=''>规格：{{item.guige}}</view>
+          <view class=''>班次：{{item.banci}}</view>
+          <view class=''>环节：{{item.huanjie}}</view>
+          <view class=''>成品数量：{{item.chengpinnum}}</view>
+          <view class=''>次品数量：{{item.cipinnum}}</view>
+          <view class=''>次品原因：{{item.cipinyuanyincontent}}</view>
+          <view class=''>其他工序：{{item.qitagongxucontent}}</view>
+          <view class=''>相关工序：{{item.xingguangongxucontent}}</view>
+          <view class=''>岗位姓名：{{item.name+item.pingfenname}}</view>
+          <view class='beizhuclass'>备注{{item.beizhuinfo=='undefined'?"":item.beizhuinfo}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,139 @@
+<view class='headerview'>
+  <view class="dt_title" style='color:white'>
+    <dt>生产进度新订单</dt>
+  </view>
+  <view>
+    <button bindtap="seniorscrebutton">{{seniorscrebutton}}</button>
+  </view>
+</view>
+<view wx:if="{{jindu1!=100}}" style='position:absolute;width:100%;height:100%;top:50px;z-index:100;background:white'>
+<image style='width:100%;height:80%' src='../../../image/loading.svg'></image>
+</view>
+<view class='middleview'>
+  <ul>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>订单号</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入订单号' bindinput="kehuphone"></input>
+        </view>
+      </view>
+    </li>
+    <li class="screchinner">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>彩膜型号</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{xinghao}}" placeholder='请输入彩膜型号' bindinput="xinghao"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>客户型号</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入客户型号' bindinput="kehuxinghao"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>客户名称</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入客户名称' bindinput="kehuname"></input>
+        </view>
+      </view>
+    </li>
+
+
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>表面压纹</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入压纹' bindinput="yawen"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>规格</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{guige}}" placeholder='请输入规格' bindinput="guige"></input>
+        </view>
+      </view>
+    </li>
+
+
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>大片规格</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{dapianguige}}" placeholder='请输入大片规格' bindinput="dapianguige"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>生产进度</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{jindu}}" placeholder='请输入生产进度' bindinput="jindu"></input>
+        </view>
+      </view>
+    </li>
+  </ul>
+</view>
+<view wx:for="{{shengchanorderziInfo}}">
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view class=''>
+        <text>下单时间</text>{{item.time}}</view>
+      <view class=''>
+        <text>订单号</text>{{item.kehuphone}}</view>
+      <view class=''>
+        <text>客户名称</text>{{item.kehuname}}</view>
+      <view class=''>
+        <text>产品类型</text>{{item.type}}</view>
+      <view class=''>
+        <text>彩膜型号</text>{{item.bianhao}}</view>
+      <view class=''>
+        <text>客户型号</text>{{item.kehuxinghao}}</view>
+      <view class=''>
+        <text>规格</text>{{item.ckhou}}</view>
+      <view class=''>
+        <text>大片规格</text>{{item.jicaiguigename}}</view>
+      <view class=''>
+        <text>压纹</text>{{item.yawen}}</view>
+      <view class=''>
+        <text>倒角</text>{{item.daojiaoname}}</view>
+      <view class=''>
+        <text>uv光泽度</text>{{item.biaomianguangzedu}}</view>
+      <view class=''>
+        <text>订单数量</text>{{item.mishu}}</view>
+      <view class=''>
+        <text>包装方式</text>{{item.baozhuangfangshi}}</view>
+      <view class=''>
+        <text>交货日期</text>{{item.jiaohuotime}}</view>
+      <view class=''>
+        <text>备注</text>{{item.shengchanorderzibeizhu}}</view>
+      <view class=''>
+        <text>状态</text>{{item.nowstatus}}</view>
+      <view class=''>
+        <text>下单人</text>{{item.xiadanren}}</view>
+    </view>
+  </view>
+</view>

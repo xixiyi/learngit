@@ -1,0 +1,74 @@
+<view class='headerview' style='background:rgb(0,150,136)'>
+<view class="dt_title"> <dt>{{baobiaotitle}}</dt></view>
+</view>
+<view class="{{ribao}}">
+  <view wx:for="{{baifangkehuInfo}}">
+    <view class='invenout'>
+      <view class='inveninner'>
+        <view class=''>序号：{{index+1}}</view>
+        <view class=''>姓名：{{item.kehuname}}</view>
+        <view class=''>电话：{{item.kehuphone}}</view>
+        <view  class=''>单位：{{item.danweiname}}</view>
+        <view class=''>地址：{{item.address}}</view>
+        <view class=''>客户情况：{{item.kehuqk}}</view>
+        <view class=''>客户意见：{{item.kehuyj}}</view>
+        <view style='word-break:break-all' class=''>备注：{{item.beizhu}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view style='word-break:break-all' class=''>市场分析：{{shichangfenxi}}</view>
+    </view>
+  </view>
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view style='word-break:break-all' class=''>客户定位：{{kehudingwei}}</view>
+    </view>
+  </view>
+</view>
+<view class="{{zhoubao}}">
+
+    <view class='invenout'>
+      <view class='inveninner'>
+        <view class=''>职务：{{zhiwu}}</view>
+        <view class=''>日期：{{riqi}}</view>
+        <view class=''>总额：{{zonge}}</view>
+        <view class=''>周总额：{{weekzonge}}</view>
+      </view>
+    </view>
+  <view wx:for="{{baifangkehuInfo}}">
+    <view class='invenout'>
+      <view class='inveninner'>
+        <view class=''>星期：{{index+1}}</view>
+        <view class=''>姓名：{{item.kehuname}}</view>
+        <view class=''>拜访：{{item.kehuphone}}</view>
+        <view class=''>情况：{{item.danweiname}}</view>
+        <view style='word-break:break-all' class=''>备注：{{item.beizhu}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="{{yuebao}}">
+    <view class='invenout'>
+      <view class='inveninner'>
+        <view class=''>职务：{{zhiwu}}</view>
+        <view class=''>日期：{{riqi}}</view>
+        <view class=''>总额：{{zonge}}</view>
+      </view>
+    </view>
+  <view wx:for="{{baifangkehuInfo}}">
+    <view class='invenout'>
+      <view class='inveninner'>
+        <view class=''>时间：{{item.shijian}}</view>
+        <view class=''>区域：{{item.quyu}}</view>
+        <view class=''>老客户：{{item.laokehu}}</view>
+        <view class=''>新客户：{{item.xinkehu}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+

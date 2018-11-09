@@ -1,0 +1,19 @@
+.headerview{
+  padding-bottom: 10px
+}
+.headerview .dt_title{
+  height:46px;
+  line-height:46px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 19px
+}
+.invenout{
+  padding-bottom: 20px;line-height: 20px;
+}
+.inveninner{
+  border: 1px solid #999;line-height: 20px
+}
+.hidden{
+  display: none
+}

@@ -1,0 +1,75 @@
+<view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>出库累计</dt>
+  </view>
+  <view>
+    <button bindtap="seniorscrebutton">{{seniorscrebutton}}</button>
+  </view>
+</view>
+<view class='middleview'>
+  <ul>
+
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>开始时间</label>
+        </view>
+        <view class="screchinner_right">
+          <picker mode="date" value="{{begintime}}" start="1970-01-01" end="2099-01-01" bindchange="bindbeginDateChange">
+            <view class="picker">
+              <input value="{{begintime}}" placeholder='请输入开始时间' disabled></input>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>结束时间</label>
+        </view>
+        <view class="screchinner_right">
+          <picker mode="date" value="{{endtime}}" start="1970-01-01" end="2099-01-01" bindchange="bindendDateChange">
+            <view class="picker">
+              <input value="{{endtime}}" placeholder='请输入结束时间' disabled></input>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>型号</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{xinghao}}" placeholder='请输入型号' bindinput="xinghao"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>原材料</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{materialname}}" placeholder='请输入原材料' bindinput="materialname"></input>
+        </view>
+      </view>
+    </li>
+  </ul>
+</view>
+
+<view wx:for="{{materialorderInfo}}">
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view>原材料：{{item.materialname}}</view>
+      <view>型号：{{item.xinghao}}</view>
+      <view>出库数量：{{item.squarenum}}</view>
+      <view class='btninproduce'>
+        <button class="btinproduce" data-materialname="{{item.materialname}}" data-xinghao="{{item.xinghao}}" bindtap="viewbutton">详情</button>
+      </view>
+    </view>
+  </view>
+</view>

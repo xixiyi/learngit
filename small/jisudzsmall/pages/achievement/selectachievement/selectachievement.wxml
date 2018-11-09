@@ -1,0 +1,100 @@
+<view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>查看生产业绩</dt>
+  </view>
+  <view>
+    <button bindtap="selectbutton">{{buttontent}}</button>
+    <button bindtap="{{buttonyeji}}">{{buttontitle}}</button>
+  </view>
+</view>
+<view style='text-align:center;font-size:28px'>
+{{sousuotitle}}
+</view>
+<view class="{{hideorshow}}">
+  <view class='middleview'>
+    <ul>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>姓名</label>
+          </view>
+          <view class="screchinner_right">
+            <input placeholder='请输入姓名' value="{{name}}" bindinput="name"></input>
+          </view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>班次</label>
+          </view>
+          <view class="screchinner_right">
+            <input placeholder='请输入班次' value="{{banci}}" bindinput="banci"></input>
+          </view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>白夜</label>
+          </view>
+          <view class="screchinner_right">
+            <input placeholder='请输入白夜' value="{{baiye}}" bindinput="baiye"></input>
+          </view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>环节</label>
+          </view>
+          <view class="screchinner_right">
+            <input placeholder='请输入环节' value="{{huanjie}}" bindinput="huanjie"></input>
+          </view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>开始时间</label>
+          </view>
+          <view class="screchinner_right">
+            <picker mode="date" value="{{begintime}}" start="1970-01-01" end="2099-01-01" bindchange="bindbeginDateChange">
+              <view class="picker">
+                <input value="{{begintime}}" placeholder='请输入开始时间' bindinput="begintime" disabled></input>
+              </view>
+            </picker>
+          </view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>结束时间</label>
+          </view>
+          <view class="screchinner_right">
+            <picker mode="date" value="{{endtime}}" start="1970-01-01" end="2099-01-01" bindchange="bindendDateChange">
+              <view class="picker">
+                <input value="{{endtime}}" placeholder='请输入结束时间' bindinput="endtime" disabled></input>
+              </view>
+            </picker>
+          </view>
+        </view>
+      </li>
+    </ul>
+  </view>
+</view>
+
+<view wx:for="{{yejiInfo}}">
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view class=''>姓名：{{item.name}}</view>
+      <view class=''>部门：{{item.huanjie}}</view>
+      <view class=''>业绩：{{item.yeji}}</view>
+      <view class='btninproduce'>
+        <button class="btinproduce" data-name="{{item.name}}" bindtap="viewbutton">查看</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,103 @@
+<view class='headerview'>
+<!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+<view class="dt_title"> <dt>库存详情</dt></view>
+<view><button bindtap="seniorscrebutton">{{seniorscrebutton}}</button></view>
+</view>
+<view class='middleview'>
+    <ul>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left"><label>型号</label></view>
+          <view class="screchinner_right"><input placeholder='请输入型号' bindinput="xinghao"></input></view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left"><label>批次</label></view>
+          <view class="screchinner_right"><input placeholder='请输入批次' bindinput="pici"></input></view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>品牌</label></view>
+          <view class="screchinner_right"><input value="{{seriesname}}" placeholder='请输入品牌名' bindinput="seriesname"></input></view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>系列</label></view>
+          <view class="screchinner_right"><input value="{{seriesnum}}" placeholder='请输入系列名' bindinput="seriesnum"></input></view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>产品</label></view>
+          <view class="screchinner_right"><input value="{{productname}}" placeholder='请输入产品名' bindinput="productname"></input></view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>规格</label></view>
+          <view class="screchinner_right"><input value="{{guige}}" placeholder='请输入规格' bindinput="guige"></input></view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>库地</label></view>
+          <view class="screchinner_right"><input value="{{productlocation}}" placeholder='请输入库存地' bindinput="productlocation"></input></view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>库位</label></view>
+          <view class="screchinner_right"><input value="{{kuwei}}" placeholder='请输入库位' bindinput="kuwei"></input></view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>客户名称</label></view>
+          <view class="screchinner_right"><input value="{{kehuname}}" placeholder='请输入客户名称' bindinput="kehuname"></input></view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>开始时间</label></view>
+          <view class="screchinner_right">
+              <picker mode="date" value="{{begintime}}"start="1970-01-01"end="2099-01-01"bindchange="bindbeginDateChange">
+              <view class="picker">
+               <input value="{{begintime}}" placeholder='请输入开始时间' bindinput="begin" disabled></input>
+              </view>
+            </picker>
+          </view>
+        </view>
+      </li>
+      <li class="{{seniorscre}}">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>结束时间</label></view>
+          <view class="screchinner_right">
+          <picker mode="date" value="{{endtime}}"start="1970-01-01"end="2099-01-01"bindchange="bindendDateChange">
+              <view class="picker">
+               <input value="{{endtime}}" placeholder='请输入结束时间' bindinput="end" disabled></input>
+              </view>
+            </picker>
+          </view>
+        </view>
+      </li>
+    </ul>
+</view>
+
+
+
+
+
+<view wx:for="{{invenInfo}}">
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view class=''>型号：{{item.productnum}}</view>
+      <view class=''>批次：{{item.pici}}</view>
+      <view class=''>库存：{{item.newsquarenum}}</view>
+      <view style='word-break:break-all' class=''>明细：{{item.squarenumstring}}</view>
+      <view class=''>规格：{{item.guige}}</view>
+    </view>
+  </view>
+</view>

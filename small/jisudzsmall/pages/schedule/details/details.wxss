@@ -1,0 +1,58 @@
+
+.headerview .dt_title{
+  height:46px;
+  line-height:46px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 19px
+}
+
+.middleview{
+  border-top:1px solid #999;
+  border-bottom: 1px solid #999;
+}
+.middleview ul li{
+  padding:20px
+}
+.middleview ul li .screchinner{
+  border:1px solid #666;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+}
+.middleview ul li .screchinner_left{
+  float:left;
+  margin-right: 10px;
+  width: 80px;
+  text-align: center;
+  border-right: 1px solid #000;
+  color:red;
+  font-size: 20px;
+}
+.middleview ul li .screchinner_right{
+  overflow: hidden
+}
+.middleview ul li .screchinner_right input{
+  overflow: hidden;
+  height:40px;
+  line-height: 40px;
+}
+.btninproduce{
+  float:right;
+  margin-top:-48px;
+}
+.btinproduce{
+  padding-left:2px;
+  padding-right:2px;
+  border-radius: 20px;
+  border: 1px solid #999;
+  background: #fff;
+  color: #999
+}
+
+.hidden{
+  display: none
+}
+
+
+

@@ -1,0 +1,79 @@
+<view class="contentdiv">
+
+<view class="title" style='text-align:center;font-size:22px;background:rgb(0,150,136)'>上海海宽实业有限公司</view>
+<view style='text-align:center;padding-bottom:10px;background:rgb(0,150,136)'>业务报表（请认真填写）</view>
+
+
+<view class='middleview'>
+    <ul>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left"><label>职务</label></view>
+          <view class="screchinner_right"><input  bindinput='zhiwu' value="{{zhiwu}}" placeholder='请输入职位'></input></view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left"><label>日期</label></view>
+          <view class="screchinner_right"><input  bindtap='time' disabled value="{{time}}" placeholder='请选择日期'></input></view>
+          <picker-view class="{{hidden}}" mask-style="#fff" indicator-style="height: 50px;" style="width: 100%; height: 100px;" value="{{value}}" bindchange="changetime">
+          <picker-view-column>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+            </picker-view-column>
+          </picker-view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner {{hiddenorshow}}">
+          <view class="screchinner_left"><label>第几周</label></view>
+          <view class="screchinner_right"><input  bindinput='week' value="{{week}}" placeholder='请输入第几周'></input></view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner {{hiddenorshow}}">
+          <view class="screchinner_left"><label>销售目标</label></view>
+          <view class="screchinner_right"><input  bindinput='xiaoshouzonge' value="{{xiaoshouzonge}}" placeholder='请输入销售目标总额'></input></view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner {{hiddenorshow}}">
+          <view class="screchinner_left"><label>本周总额</label></view>
+          <view class="screchinner_right"><input  bindinput='weekxiaoshouzonge' value="{{weekxiaoshouzonge}}" placeholder='请输入本周总额目标'></input></view>
+        </view>
+      </li>
+    </ul>
+     <ul wx:for="{{weekreportInfo}}">
+      <li class="screchinner">
+        <view class="screchinner {{hiddenorshow}}">
+          <view class="screchinner_left"><label>{{item.titlelable}}</label></view>
+          <view class="screchinner_right"><input  bindinput='kehuname' data-index="{{index}}" value="{{item.kehuname}}" placeholder='请输入客户姓名'></input></view>
+        </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner {{hiddenorshow}}">
+          <view class="screchinner_left"><label>目的时间</label></view>
+          <view class="screchinner_right"><input bindinput='mudiandtime' data-index="{{index}}" value="{{item.mudiandtime}}" placeholder='请输入计划拜访目的及时间'></input></view>
+        </view>
+      </li>
+      <li class="screchinner ">
+        <view class="screchinner {{hiddenorshow}}" style='height:150px'>
+          <view class="screchinner_left infobeizhu_left"><label>完成情况</label></view>
+          <view class="screchinner_right infobeizhu_right"><textarea bindinput='qingkong' data-index="{{index}}" value="{{item.qingkong}}" style='width:220px' placeholder='请输入计划实施完成情况'></textarea></view>
+        </view>
+      </li>
+      <li class="screchinner ">
+        <view class="screchinner {{hiddenorshow}}" style='height:150px'>
+          <view class="screchinner_left infobeizhu_left"><label>信息备注</label></view>
+          <view class="screchinner_right infobeizhu_right"><textarea bindinput='beizhu' data-index="{{index}}" value="{{item.beizhu}}" style='width:220px' placeholder='请不要输入表情符号'></textarea></view>
+        </view>
+      </li>
+    </ul>
+</view>
+
+<view><button class="{{hiddenorshow}}" bindtap='submit' style="background:#3CC51F" value="提交">提交</button></view>
+</view>

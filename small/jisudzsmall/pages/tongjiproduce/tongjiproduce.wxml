@@ -1,0 +1,117 @@
+<view class='headerview'>
+  <view class="dt_title">
+    <dt>{{huanjie}}产量统计</dt>
+  </view>
+  <view>
+    <button bindtap="seniorscrebutton">{{seniorscrebutton}}</button>
+  </view>
+</view>
+<view class='middleview'>
+  <ul>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>开始时间</label>
+        </view>
+        <view class="screchinner_right">
+          <picker mode="date" value="{{begintime}}" start="1970-01-01" end="2099-01-01" bindchange="bindbeginDateChange">
+            <view class="picker">
+              <input value="{{begintime}}" placeholder='请输入开始时间' bindinput="begin" disabled></input>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>结束时间</label>
+        </view>
+        <view class="screchinner_right">
+          <picker mode="date" value="{{endtime}}" start="1970-01-01" end="2099-01-01" bindchange="bindendDateChange">
+            <view class="picker">
+              <input value="{{endtime}}" placeholder='请输入结束时间' bindinput="end" disabled></input>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>订单</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入订单' bindinput="kehuphone"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>型号</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{productname}}" placeholder='请输入型号' bindinput="xinghao"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>压纹</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入压纹' bindinput="yawen"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>规格</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入规格' value="{{guige}}" bindinput="guige"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>班次</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入班次' bindinput="banci"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>白夜</label>
+        </view>
+        <view class="screchinner_right">
+          <input placeholder='请输入白夜' value="{{baiye}}" bindinput="baiye"></input>
+        </view>
+      </view>
+    </li>
+  </ul>
+</view>
+
+<view class='invenout'>
+  <view class='inveninner'>
+    <view class=''>成品数量：{{chengpinnum==0?"":chengpinnum}}</view>
+    <view class=''>次品数量：{{cipinnum==0?"":cipinnum}}</view>
+    <view class=''>次品原因：{{cipinyuanyin}}</view>
+    <view class=''>其他工序：{{qitagongxu}}</view>
+    <view class=''>相关工序：{{xingguangongxu}}</view>
+    <view class='' style='width:83%'>岗位姓名：{{name}}</view>
+    <view class='btninproduce'>
+      <button class="btinproduce" data-index="{{index}}" bindtap="viewbutton">详情</button>
+    </view>
+    <view wx:if="{{chengpinnum==0 && chengpinnum==0}}">
+      <image style="width: 50%; height: 50px;float:right;margin-top:-150px;margin-right:45px" src="../../../image/ribaojindu.png"></image>
+    </view>
+  </view>
+</view>

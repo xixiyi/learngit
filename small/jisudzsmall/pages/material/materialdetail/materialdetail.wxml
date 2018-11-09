@@ -1,0 +1,90 @@
+<view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>材料详情</dt>
+  </view>
+  <view>
+    <button bindtap="seniorscrebutton">{{seniorscrebutton}}</button>
+  </view>
+</view>
+<view class='middleview'>
+  <ul>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>型号</label>
+        </view>
+        <view class="screchinner_right">
+          <input value='{{xinghao}}' placeholder='请输入型号' bindinput="xinghao"></input>
+        </view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>原材料</label>
+        </view>
+        <view class="screchinner_right">
+          <input value='{{materialname}}' placeholder='请输入原材料' bindinput="materialname"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>材料类型</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{materialtype}}" placeholder='请输入材料类型' bindinput="materialtype"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>材料代码</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{materialdaima}}" placeholder='请输入材料代码' bindinput="materialdaima"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>库存地</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{kcdizhi}}" placeholder='请输入库存地' bindinput="kcdizhi"></input>
+        </view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>往来单位</label>
+        </view>
+        <view class="screchinner_right">
+          <input value="{{danweiname}}" placeholder='请输入往来单位' bindinput="danweiname"></input>
+        </view>
+      </view>
+    </li>
+  </ul>
+</view>
+
+<view wx:for="{{materialInfo}}">
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view class=''>库存地：{{item.kcdizhi}}</view>
+      <view class=''>往来单位：{{item.danweiname}}</view>
+      <view class=''>材料类型：{{item.materialtype}}</view>
+      <view class=''>原材料：{{item.materialname}}</view>
+      <view class=''>材料代码：{{item.materialdaima}}</view>
+      <view class=''>单位：{{item.danwei}}</view>
+      <view class=''>型号：{{item.xinghao}}</view>
+      <view class=''>数量：{{item.squarenum}}{{item.danwei}}</view>
+     <!-- <view class=''>采购金额：{{item.caigoujinezongji}}</view>
+      <view class=''>含税金额：{{item.hanshuijinezongji}}</view> -->
+    </view>
+  </view>
+</view>

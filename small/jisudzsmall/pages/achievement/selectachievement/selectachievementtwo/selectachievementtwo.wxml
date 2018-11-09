@@ -1,0 +1,25 @@
+<view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>生产业绩明细</dt>
+  </view>
+</view>
+<view wx:for="{{yejiInfo}}">
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view class=''>时间：{{item.time}}</view>
+      <view class=''>订单号：{{item.kehuphone}}</view>
+      <view class=''>彩膜型号：{{item.caimoxinghao}}</view>
+      <view class=''>班次：{{item.banci}}</view>
+      <view class=''>生产类型：{{item.type}}</view>
+      <view class=''>生产环节：{{item.huanjie}}</view>
+      <view class=''>岗位：{{item.zhiwei}}</view>
+      <view class=''>成品数量：{{item.chengpinnum}}</view>
+      <view class=''>次品数量：{{item.cipinnum}}</view>
+      <view class=''>业绩：{{item.yeji}}</view>
+      <view class='btninproduce'>
+        <button class="btinproduce" data-ribaoid="{{item.ribaoid}}" bindtap="viewbutton">详情</button>
+      </view>
+    </view>
+  </view>
+</view>

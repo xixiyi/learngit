@@ -1,0 +1,86 @@
+<view class="contentdiv">
+  <view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>领料单</dt>
+  </view>
+  <view>
+    <button bindtap="seniorscrebutton">领料单管理</button>
+  </view>
+</view>
+  <view class='middleview'>
+    <ul>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>型号</label>
+          </view>
+          <view class="screchinner_right">
+            <input bindinput='xinghao' value="{{xinghao}}" placeholder='请输入型号'></input>
+          </view>
+        </view>
+              <view wx:for="{{materialInfo}}" class="{{materialInfoHide}}">
+        <view data-guige="{{item.guige}}" data-xinghao="{{item.xinghao}}" data-materialname="{{item.materialname}}" style='text-align:center' bindtap='clickxinghao'>{{item.xinghao}}</view>
+      </view>
+      </li>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>原材料</label>
+          </view>
+          <view class="screchinner_right">
+            <input bindinput='materialname' value="{{materialname}}" placeholder='请输入原材料'></input>
+          </view>
+        </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>数量</label>
+          </view>
+          <view class="screchinner_right">
+            <input bindinput='num' value="{{num}}" placeholder='请输入数量'></input>
+            <text class='iconfont icon-chahao chahao' bindtap='clickkehuphonechahao'>{{guige}}</text>
+          </view>
+        </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>部门</label>
+          </view>
+          <view class="screchinner_right">
+            <input bindtap='bumen' value="{{bumen}}" placeholder='请选择部门' disabled></input>
+          </view>
+        </view>
+        <view wx:for="{{bumennameInfo}}" class="{{bumennameInfoHide}}">
+        <view data-bumenname="{{item.bumenname}}" style='text-align:center' bindtap='clickbumen'>{{item.bumenname}}</view>
+      </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>说明</label>
+          </view>
+          <view class="screchinner_right">
+            <input bindinput='shuoming' value="{{shuoming}}" placeholder='请输入说明'></input>
+          </view>
+        </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner">
+          <view class="screchinner_left">
+            <label>备注</label>
+          </view>
+          <view class="screchinner_right">
+            <input bindinput='beizhu' value="{{beizhu}}" placeholder='请输入备注'></input>
+          </view>
+        </view>
+      </li>
+    </ul>
+  </view>
+
+  <view>
+    <button bindtap='submit' style="background:#3CC51F" value="提交">提交</button>
+  </view>
+</view>

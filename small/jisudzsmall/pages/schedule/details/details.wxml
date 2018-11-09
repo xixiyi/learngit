@@ -1,0 +1,37 @@
+<view class='headerview'>
+  <view class="dt_title" style='text-align:center;font-size:22px;background:rgb(255,64,129);color:white'>
+    <dt >生产进度详情</dt>
+  </view>
+</view>
+
+<view wx:if="{{xqInfo.length==0}}">
+  <view class="section__ctn">
+    <image style="width: 100%; height: 200px;" src="../../../image/ribao_img.png"></image>
+  </view>
+</view>
+
+
+<view wx:for="{{xqInfo}}">
+<view class="{{item.class}}"  style='background:rgb(188,199,221)'>
+<view class=''>订单号：{{item.kehuphone}}</view>
+<view class=''>彩膜型号：{{item.xinghao}}</view>
+<view class=''>客户型号：{{kehuxinghao}}</view>
+<view class=''>产品类型：{{item.type}}</view>
+<view class=''>压纹：{{item.yawen}}</view>
+<view class=''>订单数量：{{item.mishu}}</view>
+</view>
+<view class='' style='text-align:center;font-size:22px;color:white;background:rgb(53,107,221)'>{{item.huanjie}}</view>
+  <view class='invenout'>
+    <view class='inveninner'>
+      <view class=''>生产时间：{{item.pici}}</view>
+      <view class=''>生产规格：{{item.guige}}</view>
+      <view class=''>成品数量：{{item.chengpinnum==0?"":item.chengpinnum}}</view>
+      <view class=''>次品数量：{{item.cipinnum==0?"":item.cipinnum}}</view>
+      <view class=''>次品原因：{{item.cipinyuanyin}}</view>
+      <view class=''>领用数量：{{item.getmaterialnum==0?"":item.getmaterialnum}}</view>
+      <view wx:if="{{item.chengpinnum==0 && item.cipinnum==0}}">
+          <image style="width: 50%; height: 50px;float:right;margin-top:-95px;margin-right:45px" src="../../../image/ribaojindu.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

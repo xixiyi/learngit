@@ -1,0 +1,391 @@
+<view class="contentdiv">
+  <view class='headerview'>
+  <!--<image src="../../image/p_xiaoyuhao.png" bindtap="page_back"></image>-->
+  <view class="dt_title">
+    <dt>生产日报表</dt>
+  </view>
+  <view>
+    <button bindtap="seniorscrebutton">查看日报</button>
+  </view>
+</view>
+<view class='{{mishuhide}}'>订单数量：{{mishu}}</view>
+<!-- <view class='{{yishangchuannumhide}}'>完成数量：{{yishangchuannum}}</view> -->
+  
+  <view class='middleview'>
+    <li> 
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>订单</label> 
+        </view>
+        <view class="screchinner_right">
+          <input bindinput='kehuphone' value="{{kehuphone}}"></input>
+          <text class='iconfont icon-chahao chahao' bindtap='clickkehuphonechahao'></text>
+        </view>
+      </view>
+      <view wx:for="{{kehuphoneList}}" class="{{kehuphonelistHide}}">
+        <view class='zhanchuview' data-kehuphone="{{item.kehuphone}}" bindtap='clickkehuphone'>{{item.kehuphone}}</view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>型号</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='xinghao' value="{{bianhao}}" disabled></input>
+          <!--<text class='iconfont icon-chahao chahao' bindtap='clickbianhaochahao'></text>-->
+        </view>
+      </view>
+      <view wx:for="{{bianhaoList}}" class="{{bianhaoListHide}}">
+        <view class='zhanchuview' bindtap="clickbianhao" data-bianhao="{{item.bianhao}}">{{item.bianhao}}</view>
+      </view>
+    </li>
+    <li class="{{cailiaoHide}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>材料</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='cailiao' value="{{cailiao}}" disabled></input>
+          <text class='iconfont icon-chahao chahao' bindtap='clickcailiaochahao'></text>
+          <!--<text class='iconfont icon-chahao chahao' bindtap='clickbianhaochahao'></text>-->
+        </view>
+      </view>
+      <view wx:for="{{cailiaoListInfo}}" class="{{cailiaoListHide}}">
+        <view class='zhanchuview' bindtap="clickcailiao" data-cailiao="{{item.cailiao}}">{{item.cailiao}}</view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>类型</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='shengchantype' value="{{shengchantypename}}" disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{shengchantypeList}}" class="{{shengchantypeListHide}}">
+        <view bindtap="clickshengchantypename" data-shengchantypeid="{{item.shengchantypeid}}" data-shengchantypename="{{item.shengchantypename}}" class='zhanchuview'>{{item.shengchantypename}}</view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>环节</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='shengchanhuanjie' value="{{huanjiename}}" disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{huanjienameList}}" class="{{huanjienameListHide}}">
+        <view bindtap="clickhuanjiename" data-shengchanhuanjiepaixu="{{item.shengchanhuanjiepaixu}}" data-shengchanhuanjieid="{{item.shengchanhuanjieid}}" data-shengchanhuanjieguige="{{item.shengchanhuanjieguige}}" data-shengchanhuanjiename='{{item.shengchanhuanjiename}}'
+          class='zhanchuview'>{{item.shengchanhuanjiename}}</view>
+      </view>
+    </li>
+    <li class="{{seniorscre}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>时间</label>
+        </view>
+        <view class="screchinner_right">
+          <picker mode="date" value="{{time}}" start="1970-01-01" end="2099-01-01" bindchange="bindbeginDateChange">
+            <view class="picker">
+              <input value="{{time}}" bindinput="begin" disabled></input>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>规格</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='guige' value="{{guige}}" disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{ckhouList}}" class="{{ckhouListHide}}">
+        <view bindtap="clickckhou" data-guige='{{item.guige}}' class='zhanchuview'>{{item.guige}}</view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>压纹</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='yawen' value="{{yawen}}" disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{yawenList}}" class="{{yawenListHide}}">
+        <view bindtap='clickyawenname' data-id="{{item.id}}" data-yawenname="{{item.yawenname}}" class='zhanchuview'>{{item.yawenname}}</view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>数量</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindinput='num' value="{{num}}"></input>
+          <text class='iconfont icon-chahao chahao' bindtap='clicknumchahao'></text>
+        </view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>备注</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindinput='beizhu' value="{{beizhu}}"></input>
+          <text class='iconfont icon-chahao chahao' bindtap='clickbeizhuchahao'></text>
+        </view>
+      </view>
+    </li>
+    <li class="{{peifangHide}}">
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>配方</label>
+        </view>
+        <view class="screchinner_right">
+          <input style="width:225px" bindtap='peifang' value="{{peifang}}" disabled></input>
+          <text class='iconfont icon-chahao chahao' bindtap='clickpeifangchahao'></text>
+        </view>
+      </view>
+      <view wx:for="{{peifangListInfo}}" class="{{peifangListHide}}">
+        <view style='font-size:25px' bindtap="clickpeifang" data-peifangname="{{item.peifangname}}" class=''>{{item.peifangname}}</view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>班次</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='banci' value="{{banci}}" disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{banciList}}" class="{{banciListHide}}">
+        <view bindtap="clickbanciname" data-id="{{item.id}}" data-banciname="{{item.banciname}}" class='zhanchuview'>{{item.banciname}}</view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>白夜</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='baiye' value="{{baiye}}" disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{baiyeList}}" class="{{baiyeListHide}}">
+        <view bindtap="clickbaiye" data-id="{{item.id}}" data-baiye="{{item.baiye}}" class='zhanchuview'>{{item.baiye}}</view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>加班</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='jiaban' value="{{jiaban}}" disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{jiabanListInfo}}" class="{{jiabanListHide}}">
+        <view bindtap="clickjiaban" data-jiaban="{{item.jiaban}}" class='zhanchuview'>{{item.jiaban}}</view>
+      </view>
+    </li>
+
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>补贴</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='butie' value="{{butie}}" disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{butieList}}" class="{{butieListHide}}">
+        <view bindtap='clickbutie' data-id="{{item.id}}" data-butiejine="{{item.butiejine}}" class='zhanchuview'>{{item.butiejine}}</view>
+      </view>
+    </li>
+    <li class="screchinner ">
+      <view class="screchinner" style='height:150px;border-top-left-radius:0px;border-bottom-left-radius:0px;  border-top-right-radius: 0px;border-bottom-right-radius: 0px;'>
+        <view class="screchinner_right infobeizhu_right">
+          <textarea bindinput='namecontent' maxlength="-1" value="{{namecontent}}"></textarea>
+          <text class='iconfont icon-chahao chahao' bindtap='clicknamechahao'></text>
+        </view>
+      </view>
+        <view>
+    <view style='color:red'>人数：{{renshu}}</view>
+  </view>
+    </li>
+  </view>
+
+
+  <view class="tr">
+    <view class='td'>
+      <input bindinput='ribaonamejiansuo' style='text-align:center;height:50px' placeholder='姓名检索'></input>
+    </view>
+    <view class="td">
+      <button bindtap='{{zhankaiorhebing}}'>{{buttonzhankaititle}}</button>
+    </view>
+    <view class="td">
+      <button bindtap='submit' style="background:#3CC51F" value="提交">提交</button>
+    </view>
+  </view>
+
+  <view class="middleview {{gangweiview}}">
+    <li style="padding-top:1px">
+        <view style='text-align:center;color:red;font-size:30px;margin-top:-27px'>姓名：{{name}}</view>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>工时</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindinput='gongshi' style='text-align:center' value="{{gongshi}}"></input>
+        </view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>脱产工时</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindinput='tuochangongshi' style='text-align:center' value="{{tuochangongshi}}"></input>
+        </view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>比例</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindinput='bili' style='text-align:center' value="{{bili}}"></input>
+        </view>
+      </view>
+    </li>
+    <li>
+      <view class="screchinner">
+        <view class="screchinner_left">
+          <label>岗位</label>
+        </view>
+        <view class="screchinner_right">
+          <input bindtap='gangwei' style='text-align:center' value="{{gangwei}}" placeholder='请选择' disabled></input>
+        </view>
+      </view>
+      <view wx:for="{{gangweiList}}" class="{{gangweiListHide}}">
+        <view class="zhanchuview" bindtap='clickgangwei' data-ispingfen="{{item.ispingfen}}" data-zhiwei="{{item.zhiwei}}" style='text-align:center'>{{item.zhiwei}}</view>
+      </view>
+    </li>
+    <view class="tr">
+      <view class="td">
+        <button bindtap='ribaogangweicancle'>取消</button>
+      </view>
+      <view class="td">
+        <button bindtap='ribaogangweisubmit'>提交</button>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="container">
+    <view class="table">
+      <view class="tr">
+        <view class="th">姓名</view>
+        <view class="th">部门</view>
+        <view class="th">操作</view>
+      </view>
+      <view class="tr {{item.class}}" wx:for="{{ribaonameList}}">
+        <view class='td'>{{item.name}}</view>
+        <view class="td"> {{item.zhiwei}} </view>
+        <view class="td">
+          <button data-name="{{item.name}}" data-index="{{index}}" bindtap='gangweibutton'>岗位</button>
+        </view>
+      </view>
+      <view class="tr">
+        <view class="th">
+          <button data-page="{{prePage}}" bindtap='prePage'>上一页</button>
+        </view>
+        <view class="th">
+
+        </view>
+        <view class="th">
+          <button data-page="{{nextPage}}" bindtap='nextPage'>下一页</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="container">
+    <view class="table">
+      <view class="tr">
+        <view class="td" style='color:red'>次品原因</view>
+      </view>
+      <view class="tr" wx:for="{{huanjiecipinList}}">
+        <view class='td'>
+          <checkbox bindtap='cipincheckboxselect' data-cipinname="{{item.cipinname}}" data-cipinsijisuan='{{item.cipinsijisuan}}' checked="{{cipincontentarr[index].checked}}" data-index="{{index}}"></checkbox>
+        </view>
+        <view class="td"> {{item.cipinname}} </view>
+        <view class="td">
+          <input style='height:50px' data-index="{{index}}" value="{{cipincontentarr[index].cipinnum}}" bindinput='cipinnum' placeholder="数量"></input>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="container">
+    <view class="table">
+      <view class="tr">
+        <view class="td" style='color:red'>其他工序</view>
+      </view>
+      <view class="tr" wx:for="{{qitagongxuList}}" wx:for-item="itemName" wx:for-index="idex">
+
+        <view class='td' style='text-align:left;display:flex'>
+          <checkbox bindtap='qitagongxucheckboxselect' data-gongxuname="{{itemName.gongxuname}}" checked="{{qitagongxucontentarr[idex].checked}}" data-index="{{idex}}"></checkbox><text style='line-height:{{qitagongxucontentarr[idex].lineheight}}px;'>{{itemName.gongxuname}}</text>
+        </view>
+        
+        <view class="td">
+          <input style='height:50px' data-index="{{idex}}" value="{{qitagongxucontentarr[idex].qitagongxuguige}}" bindtap='qitagongxuguige' disabled placeholder='选择规格'></input>
+        </view>
+        <view class="td">
+          <input style='height:50px' data-index="{{idex}}" value="{{qitagongxucontentarr[idex].qitagongxunum}}" placeholder='数量' bindinput='qitagongxunum'></input>
+        </view>
+        <view class="guigealert {{qitagongxucontentarr[idex].guigearrHide}}">
+          <block wx:for="{{qitagongxucontentarr[idex].guigearr}}" wx:for-item="guigeitem" wx:for-index="guigeindex">
+            <view data-index="{{idex}}" bindtap='clickqitagongxuguige' data-guige="{{guigeitem.guige}}" style='text-align:center'>{{guigeitem.guige}}
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="container">
+    <view class="table">
+      <view class="tr">
+        <view class="td" style='color:red'>相关工序</view>
+      </view>
+      <view class="tr" wx:for="{{xingguangongxuList}}">
+        <view class='td'>
+          <checkbox bindtap='xingguangongxucheckboxselect' data-xingguangongxuname="{{item.xingguangongxuname}}" data-xingguangongxusijisuan='{{item.xingguangongxusijisuan}}' checked="{{xingguangongxucontentarr[index].checked}}" data-index="{{index}}"></checkbox>
+        </view>
+        <view class="td"> {{item.xingguangongxuname}} </view>
+        <view class="td">
+          <input style='height:50px' data-index="{{index}}" value="{{xingguangongxucontentarr[index].xingguangongxunum}}" bindinput='xingguangongxunum' placeholder='数量'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <view>
+    <button bindtap='submit' style="background:#3CC51F" value="提交">提交</button>
+  </view>
+</view>

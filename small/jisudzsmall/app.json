@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/inven/inven",
+    "pages/produce/insertproduce/insertproduce",
+    "pages/produce/selectproduce/selectproduce",
+    "pages/produce/selectproduce/selectproducetwo/selectproducetwo",
+    "pages/schedule/new/new",
+    "pages/schedule/received/received",
+    "pages/schedule/complete/complete",
+    "pages/schedule/cancle/cancle",
+    "pages/schedule/all/all",
+    "pages/schedule/details/details",
+    "pages/achievement/insertachievement/insertachievement",
+    "pages/achievement/selectachievement/selectachievement",
+    "pages/achievement/selectachievement/selectachievementtwo/selectachievementtwo",
+    "pages/material/materialdetail/materialdetail",
+    "pages/material/getmaterial/getmaterial",
+    "pages/material/getmaterialselect/getmaterialselect",
+    "pages/tongjiproduce/tongjiproduce",
+    "pages/tongjiproduce/tongjiproducetwo/tongjiproducetwo",
+    "pages/achievement/selectachievement/selectachievementtwo/selectachievementthree/selectachievementthree",
+    "pages/report/dayreport/dayreport",
+    "pages/report/weekreport/weekreport",
+    "pages/report/monthreport/monthreport",
+    "pages/report/selectreport/selectreport",
+    "pages/report/selectreport/dayinreport/dayinreport"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f2f2f2",
+    "navigationBarTitleText": "极速定制saas",
+    "navigationBarTextStyle": "black"
+  }
+}

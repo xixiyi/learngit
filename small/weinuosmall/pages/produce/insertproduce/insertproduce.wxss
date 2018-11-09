@@ -1,0 +1,154 @@
+
+.headerview{
+  padding-bottom: 10px;
+  background: rgb(63,81,181)
+}
+.headerview .dt_title{
+  float:left;
+  height:46px;
+  line-height:46px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 19px
+}
+.headerview button{
+  width: 103px;
+  border-radius: 50px;
+  border: 1px solid #999;
+  background: #fff;
+  margin-left: 0px
+}
+
+.middleview {
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+.middleview  li {
+  padding: 20px;
+}
+
+.middleview  li .screchinner {
+  border: 1px solid #666;
+  height: 40px;
+  line-height: 40px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  width: 350px;
+  border-radius: 50px;
+  margin-left: 5px;
+}
+
+.middleview  li .screchinner_left {
+  float: left;
+  margin-right: 10px;
+  width: 80px;
+  text-align: center;
+  border-right: 1px solid #000;
+  color: red;
+  font-size: 20px;
+}
+
+.middleview  li .screchinner_right {
+  overflow: hidden;
+}
+
+
+.middleview  li .screchinner_right input {
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+}
+.title{
+   background: rgb(63,81,181)
+}
+
+.infobeizhu {
+  height: 150px;
+}
+
+.infobeizhu_left {
+  height: 150px;
+  line-height: 150px;
+}
+
+.add {
+  height: 40px;
+  width: 40px;
+}
+
+.textareainput {
+  border: 1px solid #999;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.table {
+  border-right: 0;
+  border-bottom: 0;
+  width: 100%;
+}
+
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.th, .td {
+  padding: 5px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 100%;
+  vertical-align: middle;
+  line-height: 46px;
+  height: 46px;
+}
+
+.th {
+  font-weight: 400;
+  background-color: #dadada;
+}
+
+.guigealert {
+  width: 100%;
+  position: absolute;
+  background: wheat;
+  z-index: 100;
+}
+
+.hidden {
+  display: none;
+}
+
+/*font  叉号图标**/
+
+@font-face {
+  font-family: 'iconfont';
+  src: url(data:font/truetype;charset=utf-8;base64,AAEAAAANAIAAAwBQRkZUTYVgnRMAAAYoAAAAHEdERUYAKQAKAAAGCAAAAB5PUy8yPJBIFAAAAVgAAABWY21hcAAP6c0AAAHAAAABQmdhc3D//wADAAAGAAAAAAhnbHlmjuxNjAAAAxAAAAA0aGVhZBLauYYAAADcAAAANmhoZWEG8gOFAAABFAAAACRobXR4DAAA7AAAAbAAAAAQbG9jYQAaAAAAAAMEAAAACm1heHABDwAYAAABOAAAACBuYW1lKeYRVQAAA0QAAAKIcG9zdNh0bscAAAXMAAAAMQABAAAAAQAAu9676V8PPPUACwQAAAAAANfeOwUAAAAA1947BQDsACwDFAJTAAAACAACAAAAAAAAAAEAAAOA/4AAXAQAAAAAAAMUAAEAAAAAAAAAAAAAAAAAAAAEAAEAAAAEAAwAAQAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5iLmIgOA/4AAXAOAAIAAAAABAAAAAAAABAAAAAAAAAAEAAAABAAA7AAAAAMAAAADAAAAHAABAAAAAAA8AAMAAQAAABwABAAgAAAABAAEAAEAAOYi//8AAOYi//8Z4QABAAAAAAAAAQYAAAEAAAAAAAAAAQIAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoAAAABAOwALAMUAlMACwAAAScHJwcXBxc3FzcnAxQm7u4m7u4m7u4m7gIuJe7uJe7uJu7uJu4AAAASAN4AAQAAAAAAAAAVACwAAQAAAAAAAQAIAFQAAQAAAAAAAgAHAG0AAQAAAAAAAwAIAIcAAQAAAAAABAAIAKIAAQAAAAAABQALAMMAAQAAAAAABgAIAOEAAQAAAAAACgArAUIAAQAAAAAACwATAZYAAwABBAkAAAAqAAAAAwABBAkAAQAQAEIAAwABBAkAAgAOAF0AAwABBAkAAwAQAHUAAwABBAkABAAQAJAAAwABBAkABQAWAKsAAwABBAkABgAQAM8AAwABBAkACgBWAOoAAwABBAkACwAmAW4ACgBDAHIAZQBhAHQAZQBkACAAYgB5ACAAaQBjAG8AbgBmAG8AbgB0AAoAAApDcmVhdGVkIGJ5IGljb25mb250CgAAaQBjAG8AbgBmAG8AbgB0AABpY29uZm9udAAAUgBlAGcAdQBsAGEAcgAAUmVndWxhcgAAaQBjAG8AbgBmAG8AbgB0AABpY29uZm9udAAAaQBjAG8AbgBmAG8AbgB0AABpY29uZm9udAAAVgBlAHIAcwBpAG8AbgAgADEALgAwAABWZXJzaW9uIDEuMAAAaQBjAG8AbgBmAG8AbgB0AABpY29uZm9udAAARwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABzAHYAZwAyAHQAdABmACAAZgByAG8AbQAgAEYAbwBuAHQAZQBsAGwAbwAgAHAAcgBvAGoAZQBjAHQALgAAR2VuZXJhdGVkIGJ5IHN2ZzJ0dGYgZnJvbSBGb250ZWxsbyBwcm9qZWN0LgAAaAB0AHQAcAA6AC8ALwBmAG8AbgB0AGUAbABsAG8ALgBjAG8AbQAAaHR0cDovL2ZvbnRlbGxvLmNvbQAAAgAAAAAAAAAKAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAEAAAAAQACAQIGY2hhaGFvAAAAAAAAAf//AAIAAQAAAAwAAAAWAAAAAgABAAMAAwABAAQAAAACAAAAAAAAAAEAAAAA1aQnCAAAAADX3jsFAAAAANfeOwU=) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.chahao {
+  font-size: 40px;
+  color: black;
+  float: right;
+  top: -43px;
+  position: relative;
+  z-index: 100;
+}
+
+.icon-chahao:before {
+  content: "\e622";
+}

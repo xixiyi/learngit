@@ -1,0 +1,66 @@
+<view class="contentdiv">
+
+<view class="title" style='text-align:center;font-size:22px;background:rgb(0,150,136)'>上海海宽实业有限公司</view>
+<view style='text-align:center;padding-bottom:10px;background:rgb(0,150,136)'>业务报表（请认真填写）</view>
+
+
+<view class='middleview'>
+     <ul wx:for="{{invenInfo}}">
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left"><label>客户姓名</label></view>
+          <view class="screchinner_right"><input bindinput='kehuname' data-index="{{index}}" value="{{item.kehuname}}" placeholder='请输入客户姓名'></input></view>
+        </view>
+      </li>
+      <li>
+        <view class="screchinner">
+          <view class="screchinner_left"><label>联系电话</label></view>
+          <view class="screchinner_right"><input bindinput='kehuphone' data-index="{{index}}" value="{{item.kehuphone}}" placeholder='请输入联系电话'></input></view>
+        </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>单位名称</label></view>
+          <view class="screchinner_right"><input bindinput='danweiname' data-index="{{index}}" value="{{item.danweiname}}" placeholder='请输入单位名称'></input></view>
+        </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>详细地址</label></view>
+          <view class="screchinner_right"><input  bindinput='address' data-index="{{index}}" value="{{item.address}}" placeholder='请输入详细地址'></input></view>
+        </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>客户情况</label></view>
+          <view class="screchinner_right"><input bindinput='kehuqk' data-index="{{index}}" value="{{item.kehuqk}}" placeholder='请输入客户情况'></input></view>
+        </view>
+      </li>
+      <li class="screchinner">
+        <view class="screchinner">
+          <view class="screchinner_left"><label>客户意见</label></view>
+          <view class="screchinner_right"><input bindinput='kehuyj' data-index="{{index}}" value="{{item.kehuyj}}" placeholder='请输入客户意见'></input></view>
+        </view>
+      </li>
+      <li class="screchinner ">
+        <view class="screchinner" style='height:150px'>
+          <view class="screchinner_left infobeizhu_left"><label>信息备注</label></view>
+          <view class="screchinner_right infobeizhu_right"><textarea bindinput='beizhu' data-index="{{index}}" value="{{item.beizhu}}" style='width:220px' placeholder='请不要输入表情符号'></textarea></view>
+        </view>
+        <view bindtap="delDom" class="{{item.showOrhide}}" data-index="{{index}}" style='text-align:right'>删除</view>
+      </li>
+    </ul>
+</view>
+<view>
+	<image class="add" src="../../../image/add_nor.png" bindtap="imageAdd"></image>
+</view>
+<view>
+	<label>市场分析</label>
+  <textarea class="textareainput" bindinput='luxian' value="{{luxian}}" placeholder='请不要输入表情符号'></textarea>
+</view>
+<view>
+	<label>客户定位（星级）</label>
+  <textarea class="textareainput"  bindinput='pingjia' value="{{pingjia}}" placeholder='请不要输入表情符号'></textarea>
+</view>
+<view><button bindtap='submit' style="background:#3CC51F" value="提交">提交</button></view>
+</view>

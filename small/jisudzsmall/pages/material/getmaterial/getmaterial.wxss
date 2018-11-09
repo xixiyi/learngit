@@ -1,0 +1,85 @@
+
+.headerview{
+  padding-bottom: 10px;
+  background: rgb(215,34,100);
+}
+.headerview .dt_title{
+  float:left;
+  height:46px;
+  line-height:46px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 19px
+}
+.headerview button{
+  width: 120px;
+  border-radius: 50px;
+  border: 1px solid #999;
+  background: #fff;
+  margin-left: 0px
+}
+
+.middleview{
+  height: 525px;
+  line-height: 38px;
+  border-top:1px solid #999;
+  border-bottom: 1px solid #999;
+}
+.middleview ul li{
+  padding:20px
+}
+.middleview ul li .screchinner{
+  border:1px solid #666;
+  height: 40px;
+  line-height: 40px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px
+}
+.middleview ul li .screchinner_left{
+  float:left;
+  margin-right: 10px;
+  width: 80px;
+  text-align: center;
+  border-right: 1px solid #000;
+  color:red;
+  font-size: 20px;
+}
+.middleview ul li .screchinner_right{
+  overflow: hidden
+}
+.middleview ul li .screchinner_right input{
+  overflow: hidden;
+  height:40px;
+  line-height: 40px;
+}
+.infobeizhu{
+  height: 150px
+}
+.infobeizhu_left{
+  height: 150px;
+  line-height: 150px;
+}
+.add{
+  height: 40px;
+  width:40px;
+}
+.textareainput{
+  border:1px solid #999;
+  width: 100%;
+  margin-top:5px;
+  margin-bottom: 10px;
+}
+
+.chahao {
+  font-size: 26px;
+  color: red;
+  float: right;
+  top: -43px;
+  position: relative;
+  z-index: 100;
+}
+
+
+.hidden{
+  display: none
+}
